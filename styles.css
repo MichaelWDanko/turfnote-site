@@ -162,7 +162,6 @@ a {
 .section h2,
 .status-card h3,
 .feature-card h3,
-.sync-steps h3,
 .timeline-item h2 {
   font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   letter-spacing: 0;
@@ -253,8 +252,7 @@ a {
 }
 
 .phone-header span,
-.summary-row span,
-.sync-steps span {
+.summary-row span {
   display: block;
   color: var(--muted);
   font-size: 12px;
@@ -352,10 +350,9 @@ a {
 }
 
 .status-grid,
-.feature-grid,
-.sync-steps {
+.feature-grid {
   display: grid;
-  gap: 14px;
+  gap: 24px;
 }
 
 .status-grid {
@@ -364,12 +361,15 @@ a {
 
 .feature-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .status-card,
-.feature-card,
-.sync-steps article,
 .model-list article {
+  padding: 18px 18px 18px 0;
+}
+
+.feature-card {
   padding: 18px;
   border: 1px solid var(--card-stroke);
   border-radius: var(--radius-xl);
@@ -398,8 +398,7 @@ a {
 }
 
 .status-card h3,
-.feature-card h3,
-.sync-steps h3 {
+.feature-card h3 {
   margin: 14px 0 8px;
   font-size: 21px;
   line-height: 26px;
@@ -407,9 +406,7 @@ a {
 
 .status-card p,
 .feature-card p,
-.sync-steps p,
 .split-copy p,
-.support-copy p,
 .model-list span {
   margin: 0;
   color: var(--muted);
@@ -446,7 +443,7 @@ a {
 
 .model-list {
   display: grid;
-  gap: 12px;
+  gap: 18px;
 }
 
 .model-list article {
@@ -461,70 +458,12 @@ a {
   font-size: 17px;
 }
 
-.sync-steps {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.support-section {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-  align-items: center;
-  margin-top: 16px;
-  padding: 24px;
-  border: 1px solid var(--card-stroke);
-  border-radius: var(--radius-xl);
-  background: var(--card);
-}
-
-.privacy-section {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 24px;
-  align-items: center;
-  margin-top: 16px;
-  padding: 24px;
-  border: 1px solid var(--card-stroke);
-  border-radius: var(--radius-xl);
-  background: color-mix(in srgb, var(--primary) 7%, var(--card));
-}
-
-.privacy-copy {
-  max-width: 760px;
-}
-
-.privacy-copy h2 {
-  margin-bottom: 10px;
-}
-
-.support-copy {
-  max-width: 660px;
-}
-
-.support-copy h2 {
-  margin-bottom: 10px;
-}
-
-.support-badge {
-  flex: 0 0 auto;
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding: 0 16px;
-  border-radius: var(--radius-md);
-  background: var(--primary);
-  color: #ffffff;
-  font-weight: 700;
-  text-decoration: none;
-}
-
 .footer {
   display: flex;
   justify-content: space-between;
   gap: 16px;
   padding: 26px 0 6px;
   margin-top: 20px;
-  border-top: 1px solid var(--card-stroke);
   color: var(--muted);
 }
 
@@ -574,11 +513,7 @@ a {
 
 .policy-card {
   margin-top: 14px;
-  padding: 22px;
-  border: 1px solid var(--card-stroke);
-  border-radius: var(--radius-xl);
-  background: var(--card);
-  box-shadow: 0 16px 38px rgba(17, 38, 25, 0.07);
+  padding: 22px 0;
 }
 
 .policy-card h2 {
@@ -636,8 +571,7 @@ a {
     --shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
   }
 
-  .button-primary,
-  .support-badge {
+  .button-primary {
     color: #07110c;
   }
 
@@ -665,7 +599,7 @@ a {
   .timeline-section,
   .status-grid,
   .feature-grid,
-  .sync-steps {
+  .model-list {
     grid-template-columns: 1fr;
   }
 
@@ -735,23 +669,13 @@ a {
     gap: 8px;
   }
 
-  .support-section,
-  .privacy-section,
+  .status-card,
+  .model-list article {
+    padding-right: 0;
+  }
+
   .footer {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .privacy-section {
-    display: flex;
-  }
-
-  .support-badge {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .privacy-section .button {
-    width: 100%;
   }
 }
