@@ -1,0 +1,21 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">TurfNote brand mark</title>
+  <desc id="desc">A TurfNote app mark with consistent completed checklist rows on the left, mathematically centered in the canvas.</desc>
+  <rect width="1024" height="1024" fill="#3F774D"/>
+  <g transform="translate(512 595.16) scale(1.32) translate(-512 -512)">
+    <path d="M320 292H704V662H320V292Z" fill="#F7F7F0"/>
+    <path d="M320 292H704V662H320V292Z" stroke="#263029" stroke-opacity="0.13" stroke-width="8"/>
+    <path d="M320 236H704V292H320V236Z" fill="#C1843F"/>
+    <path d="M320 292H704V340H320V292Z" fill="#B0732E"/>
+    <path d="M412 236V340" stroke="#F4D59D" stroke-opacity="0.76" stroke-width="16" stroke-linecap="round"/>
+    <path d="M612 236V340" stroke="#F4D59D" stroke-opacity="0.76" stroke-width="16" stroke-linecap="round"/>
+    <circle cx="410" cy="418" r="34" fill="#EAF2E3"/>
+    <path d="M392 418L407 433L430 402" stroke="#3F774D" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M478 410H646" stroke="#3F774D" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="410" cy="508" r="34" fill="#EAF2E3"/>
+    <path d="M392 508L407 523L430 492" stroke="#3F774D" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M478 500H646" stroke="#3F774D" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="410" cy="598" r="34" fill="none" stroke="#263029" stroke-opacity="0.24" stroke-width="10"/>
+    <path d="M478 590H646" stroke="#263029" stroke-opacity="0.24" stroke-width="18" stroke-linecap="round"/>
+  </g>
+</svg>
