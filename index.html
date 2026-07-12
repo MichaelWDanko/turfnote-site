@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="TurfNote is a simple lawn logbook for homeowners who want a reliable record before the next lawn decision."
+      content="TurfNote is an iPhone lawn logbook for homeowners who want a reliable record before the next lawn decision."
     />
     <title>TurfNote | Lawn Logbook and Planner</title>
     <link rel="icon" href="./assets/turfnote-brand-mark.svg" type="image/svg+xml" />
@@ -23,14 +23,25 @@
           </span>
         </a>
 
-        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
-          Menu
+        <button
+          class="menu-button"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Open navigation menu"
+        >
+          <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
         </button>
 
         <nav id="site-nav" class="site-nav" aria-label="Primary">
           <a href="#product">Why</a>
           <a href="#details">Tracks</a>
           <a href="#planning">Planning</a>
+          <a
+            href="https://apps.apple.com/us/app/turfnote/id6787676253"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Get the iOS app</a>
           <a href="./privacy-policy.html">Privacy</a>
         </nav>
       </header>
@@ -38,14 +49,27 @@
       <main id="home">
         <section class="hero">
           <div class="hero-copy reveal">
-            <p class="eyebrow">Lawn records for real yard work</p>
+            <p class="eyebrow">Now available for iPhone</p>
             <h1>Know what happened before the next lawn decision.</h1>
             <p class="lede">
               TurfNote gives homeowners a simple place to record treatments, mowing, watering,
               observations, and future jobs without turning lawn care into a rigid calendar.
             </p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#details">See what it tracks</a>
+              <a
+                class="app-store-badge-link"
+                href="https://apps.apple.com/us/app/turfnote/id6787676253"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download TurfNote on the App Store"
+              >
+                <img
+                  class="app-store-badge"
+                  src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                  alt="Download on the App Store"
+                />
+              </a>
+              <a class="button button-secondary" href="#details">See what it tracks</a>
             </div>
           </div>
 
@@ -190,6 +214,11 @@
         <p>TurfNote is a lawn logbook and flexible planner.</p>
         <p>© <span data-current-year></span> TurfNote</p>
         <nav class="footer-links" aria-label="Footer">
+          <a
+            href="https://apps.apple.com/us/app/turfnote/id6787676253"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Download for iOS</a>
           <a href="./privacy-policy.html">Privacy Policy</a>
           <a href="#home">Back to top</a>
         </nav>

@@ -54,6 +54,19 @@ body::before {
   mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.24), transparent 62%);
 }
 
+body::after {
+  position: fixed;
+  inset: auto -18vw -24vw auto;
+  z-index: -1;
+  width: min(64vw, 760px);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  content: "";
+  background: radial-gradient(circle, rgba(167, 198, 123, 0.28), rgba(167, 198, 123, 0));
+  filter: blur(4px);
+  pointer-events: none;
+}
+
 a {
   color: inherit;
   text-decoration-thickness: 0.08em;
@@ -80,6 +93,13 @@ a {
   border-radius: var(--radius-xl);
   backdrop-filter: blur(18px);
   box-shadow: 0 14px 38px rgba(17, 38, 25, 0.08);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.topbar:hover {
+  border-color: color-mix(in srgb, var(--primary) 24%, transparent);
+  box-shadow: 0 18px 44px rgba(17, 38, 25, 0.12);
+  transform: translateY(-1px);
 }
 
 .brand {
@@ -117,14 +137,30 @@ a {
 
 .menu-button {
   display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
   min-height: 44px;
-  padding: 0 16px;
+  padding: 0;
   border: 1px solid color-mix(in srgb, var(--primary) 35%, transparent);
   border-radius: var(--radius-md);
   background: var(--field);
   color: var(--primary);
   font: inherit;
   font-weight: 700;
+}
+
+.menu-icon {
+  display: grid;
+  gap: 4px;
+  width: 20px;
+}
+
+.menu-icon span {
+  display: block;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
 }
 
 .site-nav {
@@ -150,6 +186,7 @@ a {
 }
 
 .hero {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.8fr);
   gap: 32px;
@@ -195,8 +232,13 @@ a {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
+  align-items: center;
   margin-top: 24px;
+}
+
+.hero-actions .button {
+  min-height: 60px;
 }
 
 .button {
@@ -209,6 +251,8 @@ a {
   border-radius: var(--radius-md);
   font-weight: 700;
   text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 .button-primary {
@@ -217,10 +261,36 @@ a {
   box-shadow: 0 14px 28px rgba(33, 92, 61, 0.22);
 }
 
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary:hover {
+  box-shadow: 0 18px 32px rgba(33, 92, 61, 0.3);
+}
+
 .button-secondary {
   background: color-mix(in srgb, var(--primary) 8%, transparent);
   border-color: color-mix(in srgb, var(--primary) 35%, transparent);
   color: var(--primary);
+}
+
+.app-store-badge-link {
+  display: inline-block;
+  line-height: 0;
+  border-radius: 10px;
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.app-store-badge-link:hover {
+  box-shadow: 0 10px 22px rgba(33, 92, 61, 0.24);
+  transform: translateY(-1px);
+}
+
+.app-store-badge {
+  display: block;
+  width: 180px;
+  height: auto;
 }
 
 .phone-preview {
@@ -236,6 +306,7 @@ a {
     linear-gradient(180deg, color-mix(in srgb, var(--card-strong) 94%, transparent), var(--card)),
     var(--card);
   box-shadow: var(--shadow);
+  animation: phone-float 6s ease-in-out infinite;
 }
 
 .phone-header {
@@ -303,6 +374,13 @@ a {
   border: 1px solid var(--card-stroke);
   border-radius: var(--radius-lg);
   background: var(--card-strong);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.timeline-item:hover {
+  border-color: color-mix(in srgb, var(--primary) 28%, transparent);
+  box-shadow: 0 12px 24px rgba(17, 38, 25, 0.08);
+  transform: translateX(4px);
 }
 
 .timeline-dot {
@@ -375,6 +453,13 @@ a {
   border-radius: var(--radius-xl);
   background: var(--card);
   box-shadow: 0 16px 38px rgba(17, 38, 25, 0.07);
+  transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+}
+
+.feature-card:hover {
+  border-color: color-mix(in srgb, var(--primary) 27%, transparent);
+  box-shadow: 0 22px 42px rgba(17, 38, 25, 0.13);
+  transform: translateY(-5px);
 }
 
 .status-pill {
@@ -537,8 +622,13 @@ a {
   margin-top: 8px;
 }
 
-.reveal {
-  animation: rise 0.7s ease both;
+body.is-enhanced .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+body.is-enhanced .reveal.is-visible {
+  animation: rise 0.72s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms) both;
 }
 
 @keyframes rise {
@@ -550,6 +640,17 @@ a {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes phone-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(0.35deg);
   }
 }
 
@@ -591,6 +692,10 @@ a {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .phone-shell {
+    transform: none;
   }
 }
 
